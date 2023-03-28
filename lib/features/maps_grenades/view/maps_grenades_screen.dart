@@ -3,6 +3,7 @@ import 'package:flutter_csgo_grenades_app/repositories/maps/models/map_data.dart
 import 'package:photo_view/photo_view.dart';
 
 import '../../../repositories/maps/models/map_grenades_data.dart';
+import '../../maps_list/widgets/maps_cs_tile.dart';
 
 class MapsGrenadesScreen extends StatefulWidget {
   const MapsGrenadesScreen(
@@ -27,44 +28,78 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
       body: Stack(
         children: [
           PhotoView(
-            enablePanAlways: true,
+            scaleStateController: PhotoViewScaleStateController(),
+            enableRotation: false,
+            minScale: PhotoViewComputedScale.contained,
+            maxScale: PhotoViewComputedScale.contained,
             imageProvider: widget.mapImage.image,
           ),
           if (showSmoke)
-            Positioned(left: 100, top: 40,child: Image.asset('lib/assets/grenade_icon/smoke.png')),
-          if (showFlash) Positioned(left: 122, top: 53,child: Image.asset('lib/assets/grenade_icon/flash.png')),
-          if (showMolotov) Positioned(left: 200, top: 150,child: Image.asset('lib/assets/grenade_icon/moly.png')),
+            Stack(
+              children: smokeOffsets.map((offset) {
+                return Positioned(
+                  left: offset.dx,
+                  top: offset.dy,
+                  child: Transform.scale(scale: 0.08,child: Image.asset('lib/assets/grenade_icon/smoke_icon.png')),
+                );
+              }).toList(),
+            ),
+          if (showFlash) Stack(
+            children: flashOffsets.map((offset) {
+              return Positioned(
+                left: offset.dx,
+                top: offset.dy,
+                child: Transform.scale(scale: 0.08,child: Image.asset('lib/assets/grenade_icon/flash_icon.png')),
+              );
+            }).toList(),
+          ),
+          if (showMolotov) Stack(
+            children: molyOffsets.map((offset) {
+              return Positioned(
+                left: offset.dx,
+                top: offset.dy,
+                child: Transform.scale(scale: 0.07,child: Image.asset('lib/assets/grenade_icon/fire_icon.png')),
+              );
+            }).toList(),
+          ),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  showSmoke = !showSmoke;
-                });
-              },
-              child: Text('Smoke'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  showFlash = !showFlash;
-                });
-              },
-              child: Text('Flash'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  showMolotov = !showMolotov;
-                });
-              },
-              child: Text('Molotov'),
-            ),
-          ],
+        color: Colors.transparent,
+        child: Container(
+          decoration:const BoxDecoration(
+            color: Colors.transparent, // установить прозрачный цвет фона контейнера
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    showSmoke = !showSmoke;
+                  });
+                },
+                child: Text('Smoke'),
+              ),
+              ElevatedButton(
+
+                onPressed: () {
+                  setState(() {
+                    showFlash = !showFlash;
+                  });
+                },
+                child: Text('Flash'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    showMolotov = !showMolotov;
+                  });
+                },
+                child: Text('Molotov'),
+              ),
+            ],
+          ),
         ),
       ),
     );
