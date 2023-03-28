@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_csgo_grenades_app/features/maps_list/widgets/maps_cs_tile.dart';
 
+import '../../../repositories/maps/models/models.dart';
+import '../../maps_grenades/view/view.dart';
+
 class MapsListScreen extends StatefulWidget {
   const MapsListScreen({Key? key}) : super(key: key);
 
@@ -11,25 +14,41 @@ class MapsListScreen extends StatefulWidget {
 class _MapsListScreenState extends State<MapsListScreen> {
   final List<MapData> _maps = [
     const MapData(
-        imageMaps: Image(
-          image: AssetImage('lib/assets/mapsList/mirage.png'),
-        ),
-        mapId: 'map1'),
+      mapImage:
+          Image(image: AssetImage('lib/assets/maps_grenades/map_mirage.png')),
+      mapLogo: Image(
+        image: AssetImage('lib/assets/maps_logo/mirage.png'),
+      ),
+      mapId: 'map1',
+      title: 'Mirage',
+    ),
     const MapData(
-        imageMaps: Image(
-          image: AssetImage('lib/assets/mapsList/dust.png'),
-        ),
-        mapId: 'map2'),
+      mapImage:
+          Image(image: AssetImage('lib/assets/maps_grenades/map_dust.png')),
+      mapLogo: Image(
+        image: AssetImage('lib/assets/maps_logo/dust.png'),
+      ),
+      mapId: 'map2',
+      title: 'Dust2',
+    ),
     const MapData(
-        imageMaps: Image(
-          image: AssetImage('lib/assets/mapsList/inferno.png'),
-        ),
-        mapId: 'map3'),
+      mapImage:
+          Image(image: AssetImage('lib/assets/maps_grenades/map_inferno.png')),
+      mapLogo: Image(
+        image: AssetImage('lib/assets/maps_logo/inferno.png'),
+      ),
+      mapId: 'map3',
+      title: 'Inferno',
+    ),
     const MapData(
-        imageMaps: Image(
-          image: AssetImage('lib/assets/mapsList/overpass.png'),
-        ),
-        mapId: 'map4'),
+      mapImage:
+          Image(image: AssetImage('lib/assets/maps_grenades/map_overpass.png')),
+      mapLogo: Image(
+        image: AssetImage('lib/assets/maps_logo/overpass.png'),
+      ),
+      mapId: 'map4',
+      title: 'Overpass',
+    ),
   ];
 
   @override
@@ -46,9 +65,13 @@ class _MapsListScreenState extends State<MapsListScreen> {
               child: GestureDetector(
             onTap: () {
               Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => MapScreen(mapId: map.mapId)),
-              );
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => MapGrenadesScreen(
+                      title: map.title,
+                      mapImage: map.mapImage,
+                    ),
+                  ));
             },
             child: Container(
               margin: const EdgeInsets.all(10),
@@ -69,12 +92,12 @@ class _MapsListScreenState extends State<MapsListScreen> {
                   ])),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image(
-                      image: map.imageMaps.image,
-                      fit: BoxFit.contain,
-                    ),
-                  ],
+                children: [
+                  Image(
+                    image: map.mapLogo.image,
+                    fit: BoxFit.contain,
+                  ),
+                ],
               ),
             ),
           ));
@@ -84,25 +107,3 @@ class _MapsListScreenState extends State<MapsListScreen> {
   }
 }
 
-class MapData {
-  const MapData({required this.imageMaps, required this.mapId});
-
-  final Image imageMaps;
-  final String mapId;
-}
-
-class MapScreen extends StatelessWidget {
-  const MapScreen({required this.mapId});
-
-  final String mapId;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Карта $mapId')),
-      body: Center(
-        child: Text('Здесь будет карта $mapId'),
-      ),
-    );
-  }
-}
