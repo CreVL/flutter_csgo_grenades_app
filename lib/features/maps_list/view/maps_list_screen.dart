@@ -67,7 +67,7 @@ class _MapsListScreenState extends State<MapsListScreen> {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => MapGrenadesScreen(
+                    builder: (_) => MapsGrenadesScreen(
                       title: map.title,
                       mapImage: map.mapImage,
                     ),

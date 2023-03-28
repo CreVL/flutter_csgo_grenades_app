@@ -67,6 +67,9 @@ flutter:
     - lib/assets/maps_grenades/map_infernot.png
     - lib/assets/maps_grenades/map_mirage.png
     - lib/assets/maps_grenades/map_overpass.png
+    - lib/assets/grenade_icon/flash.png
+    - lib/assets/grenade_icon/moly.png
+    - lib/assets/grenade_icon/smoke.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
