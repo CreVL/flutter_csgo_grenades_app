@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_csgo_grenades_app/features/maps_list/widgets/maps_cs_tile.dart';
 
 class MapsListScreen extends StatefulWidget {
   const MapsListScreen({Key? key}) : super(key: key);
@@ -9,9 +10,26 @@ class MapsListScreen extends StatefulWidget {
 
 class _MapsListScreenState extends State<MapsListScreen> {
   final List<MapData> _maps = [
-    MapData(icon: Icons.map, title: 'Карта 1', mapId: 'map1'),
-    MapData(icon: Icons.map, title: 'Карта 2', mapId: 'map2'),
-    MapData(icon: Icons.map, title: 'Карта 3', mapId: 'map3'),
+    const MapData(
+        imageMaps: Image(
+          image: AssetImage('lib/assets/mapsList/mirage.png'),
+        ),
+        mapId: 'map1'),
+    const MapData(
+        imageMaps: Image(
+          image: AssetImage('lib/assets/mapsList/dust.png'),
+        ),
+        mapId: 'map2'),
+    const MapData(
+        imageMaps: Image(
+          image: AssetImage('lib/assets/mapsList/inferno.png'),
+        ),
+        mapId: 'map3'),
+    const MapData(
+        imageMaps: Image(
+          image: AssetImage('lib/assets/mapsList/overpass.png'),
+        ),
+        mapId: 'map4'),
   ];
 
   @override
@@ -21,49 +39,42 @@ class _MapsListScreenState extends State<MapsListScreen> {
         centerTitle: true,
         title: const Text('Maps'),
       ),
-      body: GridView.count(
-        crossAxisCount: 2,
+      body: Column(
         children: List.generate(_maps.length, (index) {
           final map = _maps[index];
           return Expanded(
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (_) => MapScreen(mapId: map.mapId)),
-                );
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.yellow,
+              child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => MapScreen(mapId: map.mapId)),
+              );
+            },
+            child: Container(
+              margin: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 2,
-                      blurRadius: 5,
-                      offset: Offset(0, 3),
+                      color: Colors.black,
+                      spreadRadius: 5,
+                      blurRadius: 10,
+                      offset: Offset(3, 3),
+                    )
+                  ],
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  gradient: LinearGradient(colors: [
+                    Color(0xFFFFD100),
+                    Color(0xFFFFFFFF),
+                    Color(0xFFFFD100),
+                  ])),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image(
+                      image: map.imageMaps.image,
+                      fit: BoxFit.contain,
                     ),
                   ],
-                ),
-                child: Align(
-                alignment: Alignment.center,
-                child: FractionallySizedBox(
-                  widthFactor: 0.6,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(height: 8),
-                      Text(
-                        map.title,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
               ),
             ),
           ));
@@ -74,10 +85,9 @@ class _MapsListScreenState extends State<MapsListScreen> {
 }
 
 class MapData {
-  const MapData({required this.icon, required this.title, required this.mapId});
+  const MapData({required this.imageMaps, required this.mapId});
 
-  final IconData icon;
-  final String title;
+  final Image imageMaps;
   final String mapId;
 }
 
