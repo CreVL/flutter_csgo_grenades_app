@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_csgo_grenades_app/features/video_ilst/video.dart';
 import 'package:flutter_csgo_grenades_app/repositories/maps/models/map_data.dart';
 import 'package:photo_view/photo_view.dart';
 
@@ -20,6 +21,41 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
   bool showSmoke = false;
   bool showFlash = false;
   bool showMolotov = false;
+  final List<Grenade> grenades = [
+    Grenade(
+      name: 'Smoke',
+      offsets: [
+        GrenadeOffset(
+          offset: const Offset(-83, 200),
+          videoUrl: 'lib/assets/video/3smoke.mp4',
+        ),
+        GrenadeOffset(
+          offset: const Offset(-65, 128),
+          videoUrl: 'lib/assets/video/2smoke.mp4',
+        ),
+        GrenadeOffset(
+          offset: const Offset(-45, 130),
+          videoUrl: 'lib/assets/video/1smoke.mp4',
+        ),
+        // и т.д.
+      ],
+    ),
+    Grenade(
+      name: 'Flash',
+      offsets: [
+        GrenadeOffset(
+          offset: Offset(10, 15),
+          videoUrl: 'https://www.youtube.com/watch?v=AAAAA',
+        ),
+        GrenadeOffset(
+          offset: Offset(15, 110),
+          videoUrl: 'https://www.youtube.com/watch?v=BBBBB',
+        ),
+        // и т.д.
+      ],
+    ),
+    // и т.д.
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -36,39 +72,65 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
           ),
           if (showSmoke)
             Stack(
-              children: smokeOffsets.map((offset) {
+              children: grenades
+                  .firstWhere((g) => g.name == 'Smoke')
+                  .offsets
+                  .map((offset) {
                 return Positioned(
-                  left: offset.dx,
-                  top: offset.dy,
-                  child: Transform.scale(scale: 0.08,child: Image.asset('lib/assets/grenade_icon/smoke_icon.png')),
+                  left: offset.offset.dx,
+                  top: offset.offset.dy,
+                  child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => VideoScreen(
+                                videoUrl: offset.videoUrl,
+                                offset: offset.offset,
+                              ),
+                            ));
+                      },
+                      child: Transform.scale(
+                          scale: 0.08,
+                          child: Image.asset(
+                              'lib/assets/grenade_icon/smoke_icon.png'))),
                 );
               }).toList(),
             ),
-          if (showFlash) Stack(
-            children: flashOffsets.map((offset) {
-              return Positioned(
-                left: offset.dx,
-                top: offset.dy,
-                child: Transform.scale(scale: 0.08,child: Image.asset('lib/assets/grenade_icon/flash_icon.png')),
-              );
-            }).toList(),
-          ),
-          if (showMolotov) Stack(
-            children: molyOffsets.map((offset) {
-              return Positioned(
-                left: offset.dx,
-                top: offset.dy,
-                child: Transform.scale(scale: 0.07,child: Image.asset('lib/assets/grenade_icon/fire_icon.png')),
-              );
-            }).toList(),
-          ),
+          if (showFlash)
+            Stack(
+              children: flashOffsets.map((offset) {
+                return Positioned(
+                  left: offset.dx,
+                  top: offset.dy,
+                  child: Transform.scale(
+                      scale: 0.08,
+                      child: Image.asset(
+                          'lib/assets/grenade_icon/flash_icon.png')),
+                );
+              }).toList(),
+            ),
+          if (showMolotov)
+            Stack(
+              children: molyOffsets.map((offset) {
+                return Positioned(
+                  left: offset.dx,
+                  top: offset.dy,
+                  child: Transform.scale(
+                      scale: 0.07,
+                      child:
+                          Image.asset('lib/assets/grenade_icon/fire_icon.png')),
+                );
+              }).toList(),
+            ),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.transparent,
+        color: Colors.black,
         child: Container(
-          decoration:const BoxDecoration(
-            color: Colors.transparent, // установить прозрачный цвет фона контейнера
+          decoration: const BoxDecoration(
+            color: Colors
+                .transparent, // установить прозрачный цвет фона контейнера
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -82,7 +144,6 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                 child: Text('Smoke'),
               ),
               ElevatedButton(
-
                 onPressed: () {
                   setState(() {
                     showFlash = !showFlash;
