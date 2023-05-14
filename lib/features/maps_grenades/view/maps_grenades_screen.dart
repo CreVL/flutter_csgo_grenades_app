@@ -45,11 +45,11 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
       offsets: [
         GrenadeOffset(
           offset: Offset(10, 15),
-          videoUrl: 'https://www.youtube.com/watch?v=AAAAA',
+          videoUrl: 'https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s',
         ),
         GrenadeOffset(
           offset: Offset(15, 110),
-          videoUrl: 'https://www.youtube.com/watch?v=BBBBB',
+          videoUrl: 'https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s',
         ),
         // и т.д.
       ],
@@ -99,14 +99,28 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
             ),
           if (showFlash)
             Stack(
-              children: flashOffsets.map((offset) {
+              children: grenades
+                  .firstWhere((g) => g.name == 'Flash')
+                  .offsets
+                  .map((offset) {
                 return Positioned(
-                  left: offset.dx,
-                  top: offset.dy,
-                  child: Transform.scale(
-                      scale: 0.08,
-                      child: Image.asset(
-                          'lib/assets/grenade_icon/flash_icon.png')),
+                  left: offset.offset.dx,
+                  top: offset.offset.dy,
+                  child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => VideoScreen(
+                                videoUrl: offset.videoUrl,
+                                offset: offset.offset,
+                              ),
+                            ));
+                      },
+                      child: Transform.scale(
+                          scale: 0.08,
+                          child: Image.asset(
+                              'lib/assets/grenade_icon/flash_icon.png'))),
                 );
               }).toList(),
             ),
