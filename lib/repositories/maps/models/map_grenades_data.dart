@@ -1,64 +1,67 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_csgo_grenades_app/repositories/maps/models/map_data.dart';
 
-class MapGrenadesData extends MapData {
-  final Image mapGrenades;
+abstract class MapDataBase {
+  final String title;
+  final Image mapLogo;
+  final String mapId;
+  final Image mapImage;
 
-  const MapGrenadesData(
-      {required this.mapGrenades,
-      required super.title,
-      required super.mapLogo,
-      required super.mapId,
-      required super.mapImage});
+  const MapDataBase({
+    required this.title,
+    required this.mapLogo,
+    required this.mapId,
+    required this.mapImage,
+  });
 }
 
+class MapData extends MapDataBase {
+  const MapData({
+    required String title,
+    required Image mapLogo,
+    required String mapId,
+    required Image mapImage,
+  }) : super(
+    title: title,
+    mapLogo: mapLogo,
+    mapId: mapId,
+    mapImage: mapImage,
+  );
+}
 
-List<Offset> smokeOffsets = [
-  Offset(-53, 212),
-  Offset(115, -40),
-  Offset(-250, 20),
-  Offset(10, -20),
-  Offset(40, 60),
-  Offset(-250, 20),
-  Offset(115, -90),
-  Offset(-250, 20),
-  Offset(120, -20),
-  Offset(140, 220),
-];
+class MapGrenadesData extends MapDataBase {
+  final Image mapGrenades;
 
-List<Offset> flashOffsets = [
-  Offset(-70, 15),
-  Offset(130, 60),
-  Offset(-20, 190),
-  Offset(140, 90),
-  Offset(-40, 100),
-  Offset(100, 10),
-  Offset(-110, 30),
-  Offset(233, 80),
-  Offset(-153, 20),
-  Offset(143, 40),
-];
-List<Offset> molyOffsets = [
-  Offset(70, -15),
-  Offset(130, 60),
-  Offset(20, -190),
-  Offset(140, 90),
-  Offset(-40, -100),
-  Offset(100, -10),
-  Offset(-110, -30),
-  Offset(233, 80),
-  Offset(-153, -20),
-  Offset(143, -40),
-];
+  const MapGrenadesData({
+    required this.mapGrenades,
+    required String title,
+    required Image mapLogo,
+    required String mapId,
+    required Image mapImage,
+  }) : super(
+    title: title,
+    mapLogo: mapLogo,
+    mapId: mapId,
+    mapImage: mapImage,
+  );
+}
 
 class Grenade {
   final String name;
   final List<GrenadeOffset> offsets;
-  Grenade({required this.name, required this.offsets});
+
+  Grenade({
+    required this.name,
+    required this.offsets,
+  });
 }
 
 class GrenadeOffset {
   final Offset offset;
   final String videoUrl;
-  GrenadeOffset({required this.offset, required this.videoUrl});
+
+  GrenadeOffset({
+    required this.offset,
+    required this.videoUrl,
+  });
 }

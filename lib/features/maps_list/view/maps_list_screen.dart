@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_csgo_grenades_app/features/maps_list/widgets/maps_cs_tile.dart';
+import 'package:flutter_csgo_grenades_app/repositories/maps/models/map_grenades_data.dart';
 
 import '../../../repositories/maps/models/models.dart';
 import '../../maps_grenades/view/view.dart';
