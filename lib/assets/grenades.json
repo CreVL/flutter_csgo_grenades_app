@@ -1,0 +1,53 @@
+[
+    {
+      "name": "Smoke",
+      "offsets": [
+        {
+          "offsetX": -83,
+          "offsetY": 200,
+          "videoUrl": "lib/assets/video/3smoke.mp4"
+        },
+        {
+          "offsetX": -65,
+          "offsetY": 128,
+          "videoUrl": "lib/assets/video/2smoke.mp4"
+        },
+        {
+          "offsetX": -45,
+          "offsetY": 130,
+          "videoUrl": "lib/assets/video/1smoke.mp4"
+        }
+      ]
+    },
+    {
+      "name": "Flash",
+      "offsets": [
+        {
+          "offsetX": 10,
+          "offsetY": 15,
+          "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+        },
+        {
+          "offsetX": 15,
+          "offsetY": 110,
+          "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+        }
+      ]
+    },
+    {
+      "name": "Molotov",
+      "offsets": [
+        {
+          "offsetX": 104,
+          "offsetY": 55,
+          "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+        },
+        {
+          "offsetX": -190,
+          "offsetY": 10,
+          "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+        }
+      ]
+    }
+  ]
+  

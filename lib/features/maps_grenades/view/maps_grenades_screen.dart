@@ -37,7 +37,6 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
           offset: const Offset(-45, 130),
           videoUrl: 'lib/assets/video/1smoke.mp4',
         ),
-        // и т.д.
       ],
     ),
     Grenade(
@@ -51,7 +50,6 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
           offset: Offset(15, 110),
           videoUrl: 'https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s',
         ),
-        // и т.д.
       ],
     ),
     Grenade(
@@ -65,14 +63,12 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
           offset: Offset(-190, 10),
           videoUrl: 'https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s',
         ),
-        // и т.д.
       ],
     ),
-    // и т.д.
   ];
-
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
       body: Stack(
