@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
-class Grenade {
+class GrenadeData {
   final String name;
+
   final List<GrenadeOffset> offsets;
 
-  Grenade({
+  GrenadeData({
     required this.name,
     required this.offsets,
   });
 }
 
+
 class GrenadeOffset {
-  final Offset offset;
+  final double offsetX;
+  final double offsetY;
   final String videoUrl;
 
   GrenadeOffset({
-    required this.offset,
+    required this.offsetX,
+    required this.offsetY,
     required this.videoUrl,
   });
 }
+

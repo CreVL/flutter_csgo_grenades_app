@@ -44,6 +44,7 @@ class _MapsListScreenState extends State<MapsListScreen> {
                     builder: (_) => MapsGrenadesScreen(
                       title: map.title,
                       mapImage: map.mapImage,
+                      mapId: map.mapId,
                     ),
                   ));
             },

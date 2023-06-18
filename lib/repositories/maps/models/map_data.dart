@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'map_grenades_data.dart';
 
 abstract class MapDataBase extends Equatable {
   final String title;
@@ -33,23 +34,3 @@ class MapData extends MapDataBase {
   List<Object?> get props => throw UnimplementedError();
 }
 
-class MapGrenadesData extends MapDataBase {
-  final Image mapGrenades;
-
-  const MapGrenadesData({
-    required this.mapGrenades,
-    required String title,
-    required Image mapLogo,
-    required String mapId,
-    required Image mapImage,
-  }) : super(
-    title: title,
-    mapLogo: mapLogo,
-    mapId: mapId,
-    mapImage: mapImage,
-  );
-
-  @override
-  // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
-}
