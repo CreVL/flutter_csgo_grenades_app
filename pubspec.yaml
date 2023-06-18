@@ -35,6 +35,8 @@ dependencies:
   chewie: ^1.5.0
   firebase_core: ^2.12.0
   equatable: ^2.0.5
+  get_it: ^7.6.0
+  flutter_bloc: ^8.1.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -82,6 +84,8 @@ flutter:
     - lib/assets/video/1smoke.mp4
     - lib/assets/video/3smoke.mp4
     - lib/assets/video/2smoke.mp4
+    - lib/assets/grenades.json
+    - lib/assets/maps.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

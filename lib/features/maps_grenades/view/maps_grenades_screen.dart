@@ -21,6 +21,8 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
   bool showSmoke = false;
   bool showFlash = false;
   bool showMolotov = false;
+
+  late String currentMapId;
   final List<Grenade> grenades = [
     Grenade(
       name: 'Smoke',
