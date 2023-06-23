@@ -12,8 +12,15 @@ class MapListLoading extends MapListState{
 
 }
 
+class MapListLoadingFailed extends MapListState {
+   MapListLoadingFailed({this.exception});
+
+   final Object? exception;
+}
+
 class MapListLoaded extends MapListState{
    MapListLoaded({required this.mapsList});
 
    final List<MapData> mapsList;
 }
+

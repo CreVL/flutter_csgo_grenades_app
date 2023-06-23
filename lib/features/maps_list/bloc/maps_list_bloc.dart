@@ -9,8 +9,13 @@ part 'maps_list_state.dart';
 class MapsListBloc extends Bloc<MapsListEvent, MapListState> {
   MapsListBloc(this.mapsRepository) : super(MapsListInitial()) {
     on<LoadMapsList>((event, emit) async {
-      final mapsList = await mapsRepository.loadMapData();
-      emit(MapListLoaded(mapsList:mapsList));
+
+      try{
+        final mapsList = await mapsRepository.loadMapData();
+        emit(MapListLoaded(mapsList:mapsList));
+      }catch (error){
+        emit(MapListLoadingFailed(exception:  error));
+      }
     });
   }
   final AbstractMapsRepository mapsRepository;

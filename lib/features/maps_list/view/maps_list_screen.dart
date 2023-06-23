@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_csgo_grenades_app/features/maps_list/bloc/maps_list_bloc.dart';
@@ -85,6 +86,26 @@ class _MapsListScreenState extends State<MapsListScreen> {
                   ),
                 );
               }),
+            );
+          }
+          if (state is MapListLoadingFailed) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('Упс... :('),
+                  Text('Что-то не так'),
+                  const SizedBox(height: 30),
+                  CupertinoButton(
+                    child: const Text('Перезагрузить',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                    color: Colors.amber,
+                    onPressed: () {
+                      _mapListBloc.add(LoadMapsList());
+                    },
+                  ),
+                ],
+              ),
             );
           }
           return const Center(child: CircularProgressIndicator());
