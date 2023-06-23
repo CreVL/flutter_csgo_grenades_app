@@ -1,0 +1,224 @@
+{
+  "maps": [
+    {
+      "mapId": "map1",
+      "grenades": [
+        {
+          "name": "Smoke",
+          "offsets": [
+            {
+              "offsetX": -83.0,
+              "offsetY": 200.0,
+              "videoUrl": "lib/assets/video/3smoke.mp4"
+            },
+            {
+              "offsetX": -65.0,
+              "offsetY": 128.0,
+              "videoUrl": "lib/assets/video/2smoke.mp4"
+            },
+            {
+              "offsetX": -45.0,
+              "offsetY": 130.0,
+              "videoUrl": "lib/assets/video/1smoke.mp4"
+            }
+          ]
+        },
+        {
+          "name": "Flash",
+          "offsets": [
+            {
+              "offsetX": 10.0,
+              "offsetY": 15.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            },
+            {
+              "offsetX": 15.0,
+              "offsetY": 110.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            }
+          ]
+        },
+        {
+          "name": "Molotov",
+          "offsets": [
+            {
+              "offsetX": 104.0,
+              "offsetY": 55.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            },
+            {
+              "offsetX": -190.0,
+              "offsetY": 10.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mapId": "map2",
+      "grenades": [
+        {
+          "name": "Smoke",
+          "offsets": [
+            {
+              "offsetX": -100.0,
+              "offsetY": 190.0,
+              "videoUrl": "lib/assets/video/3smoke.mp4"
+            },
+            {
+              "offsetX": -65.0,
+              "offsetY": 128.0,
+              "videoUrl": "lib/assets/video/2smoke.mp4"
+            },
+            {
+              "offsetX": -45.0,
+              "offsetY": 130.0,
+              "videoUrl": "lib/assets/video/1smoke.mp4"
+            }
+          ]
+        },
+        {
+          "name": "Flash",
+          "offsets": [
+            {
+              "offsetX": 10.0,
+              "offsetY": 15.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            },
+            {
+              "offsetX": 15.0,
+              "offsetY": 110.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            }
+          ]
+        },
+        {
+          "name": "Molotov",
+          "offsets": [
+            {
+              "offsetX": 104.0,
+              "offsetY": 55.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            },
+            {
+              "offsetX": -190.0,
+              "offsetY": 10.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mapId": "map3",
+      "grenades": [
+        {
+          "name": "Smoke",
+          "offsets": [
+            {
+              "offsetX": -83.0,
+              "offsetY": 200.0,
+              "videoUrl": "lib/assets/video/3smoke.mp4"
+            },
+            {
+              "offsetX": -65.0,
+              "offsetY": 128.0,
+              "videoUrl": "lib/assets/video/2smoke.mp4"
+            },
+            {
+              "offsetX": -45.0,
+              "offsetY": 130.0,
+              "videoUrl": "lib/assets/video/1smoke.mp4"
+            }
+          ]
+        },
+        {
+          "name": "Flash",
+          "offsets": [
+            {
+              "offsetX": 10.0,
+              "offsetY": 15.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            },
+            {
+              "offsetX": 15.0,
+              "offsetY": 110.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            }
+          ]
+        },
+        {
+          "name": "Molotov",
+          "offsets": [
+            {
+              "offsetX": 104.0,
+              "offsetY": 55.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            },
+            {
+              "offsetX": -190.0,
+              "offsetY": 10.0,
+              "videoUrl": "https://www.youtube.com/watch?v=f6cw1kFIshM"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mapId": "map4",
+      "grenades": [
+        {
+          "name": "Smoke",
+          "offsets": [
+            {
+              "offsetX": -83.0,
+              "offsetY": 200.0,
+              "videoUrl": "lib/assets/video/3smoke.mp4"
+            },
+            {
+              "offsetX": -65.0,
+              "offsetY": 128.0,
+              "videoUrl": "lib/assets/video/2smoke.mp4"
+            },
+            {
+              "offsetX": -45.0,
+              "offsetY": 130.0,
+              "videoUrl": "lib/assets/video/1smoke.mp4"
+            }
+          ]
+        },
+        {
+          "name": "Flash",
+          "offsets": [
+            {
+              "offsetX": 10.0,
+              "offsetY": 15.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            },
+            {
+              "offsetX": 15.0,
+              "offsetY": 110.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            }
+          ]
+        },
+        {
+          "name": "Molotov",
+          "offsets": [
+            {
+              "offsetX": 104.0,
+              "offsetY": 55.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            },
+            {
+              "offsetX": -190.0,
+              "offsetY": 10.0,
+              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
