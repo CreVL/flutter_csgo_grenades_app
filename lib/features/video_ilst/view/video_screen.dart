@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:http/http.dart' as http;
 
 class VideoScreen extends StatefulWidget {
   final String videoUrl;
@@ -16,11 +15,26 @@ class VideoScreen extends StatefulWidget {
 class _VideoScreenState extends State<VideoScreen> {
   late VideoPlayerController _controller;
   bool _isVideoInitialized = false;
+  double _currentSliderValue = 0.0;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset(widget.videoUrl);
+    _controller = VideoPlayerController.networkUrl(
+      Uri.parse(widget.videoUrl),
+    );
+
+    _controller.addListener(() {
+      setState(() {
+        _currentSliderValue = _controller.value.position.inSeconds.toDouble();
+      });
+
+      if (_controller.value.position >= _controller.value.duration) {
+        _controller.seekTo(Duration.zero);
+        _controller.play();
+      }
+    });
+
     _controller.initialize().then((_) {
       setState(() {
         _isVideoInitialized = true;
@@ -31,8 +45,17 @@ class _VideoScreenState extends State<VideoScreen> {
 
   @override
   void dispose() {
+    _controller.removeListener(_onVideoControllerUpdate);
     _controller.dispose();
     super.dispose();
+  }
+
+
+  void _onVideoControllerUpdate() {
+    if (_controller.value.position >= _controller.value.duration) {
+      _controller.seekTo(Duration.zero);
+      _controller.play();
+    }
   }
 
   @override
@@ -42,10 +65,26 @@ class _VideoScreenState extends State<VideoScreen> {
         title: Text("Video Screen"),
       ),
       body: Center(
-        child: _controller.value.isInitialized
-            ? AspectRatio(
-          aspectRatio: _controller.value.aspectRatio,
-          child: VideoPlayer(_controller),
+        child: _isVideoInitialized
+            ? Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            AspectRatio(
+              aspectRatio: _controller.value.aspectRatio,
+              child: VideoPlayer(_controller),
+            ),
+            Slider(
+              value: _currentSliderValue,
+              min: 0.0,
+              max: _controller.value.duration.inSeconds.toDouble(),
+              onChanged: (value) {
+                setState(() {
+                  _currentSliderValue = value;
+                  _controller.seekTo(Duration(seconds: value.toInt()));
+                });
+              },
+            ),
+          ],
         )
             : CircularProgressIndicator(),
       ),
@@ -66,3 +105,4 @@ class _VideoScreenState extends State<VideoScreen> {
     );
   }
 }
+
