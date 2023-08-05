@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_csgo_grenades_app/features/video_ilst/video.dart';
 import 'package:get_it/get_it.dart';
 
-
 import '../../../repositories/maps/abstract_maps_repository.dart';
 import '../../../repositories/maps/models/map_grenades_data.dart';
 import '../bloc/map_grenades_bloc.dart';
+import '../widgets/grenade_button.dart';
 
 class MapsGrenadesScreen extends StatefulWidget {
   const MapsGrenadesScreen({
@@ -39,6 +39,7 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
         MapGrenadesBloc(GetIt.I<AbstractMapsRepository>(), widget.mapId);
     _mapGrenadesBloc.add(LoadMapGrenades());
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +121,7 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                                     );
                                   },
                                   child: Transform.scale(
-                                    scale: 0.06,
+                                    scale: 0.03,
                                     child: Image.asset(
                                         'lib/assets/grenade_icon/flash_icon.png'),
                                   ),
@@ -151,7 +152,7 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                                     );
                                   },
                                   child: Transform.scale(
-                                    scale: 0.05,
+                                    scale: 0.03,
                                     child: Image.asset(
                                         'lib/assets/grenade_icon/fire_icon.png'),
                                   ),
@@ -196,42 +197,25 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
           return const SizedBox();
         },
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.black,
-        child: Container(
-          decoration: const BoxDecoration(
-            color: Colors.transparent,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    showSmoke = !showSmoke;
-                  });
-                },
-                child: Text('Smoke'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    showFlash = !showFlash;
-                  });
-                },
-                child: Text('Flash'),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    showMolotov = !showMolotov;
-                  });
-                },
-                child: Text('Molotov'),
-              ),
-            ],
-          ),
-        ),
+      bottomNavigationBar: buildBottomNavigationBar(
+        showSmoke: showSmoke,
+        showFlash: showFlash,
+        showMolotov: showMolotov,
+        onSmokePressed: () {
+          setState(() {
+            showSmoke = !showSmoke;
+          });
+        },
+        onFlashPressed: () {
+          setState(() {
+            showFlash = !showFlash;
+          });
+        },
+        onMolotovPressed: () {
+          setState(() {
+            showMolotov = !showMolotov;
+          });
+        },
       ),
     );
   }
