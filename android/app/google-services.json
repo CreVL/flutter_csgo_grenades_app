@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "606427333960",
+    "project_id": "flutter-csgo-grenades-app",
+    "storage_bucket": "flutter-csgo-grenades-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606427333960:android:1ca54aaa017f2e48a01f7d",
+        "android_client_info": {
+          "package_name": "com.example.flutter_csgo_grenades_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606427333960-0iljt50g4pkkd8fqtmt076lokh2kbchv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7EXw24XLIdUvjfr4D6a4QDz77SmphUHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "606427333960-0iljt50g4pkkd8fqtmt076lokh2kbchv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
