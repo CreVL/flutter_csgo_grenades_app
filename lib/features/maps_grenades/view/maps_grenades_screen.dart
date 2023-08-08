@@ -40,7 +40,6 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
     _mapGrenadesBloc.add(LoadMapGrenades());
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,14 +55,8 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                 minScale: 0.5,
                 maxScale: 150.0,
                 child: Container(
-                  width: MediaQuery
-                      .of(context)
-                      .size
-                      .width,
-                  height: MediaQuery
-                      .of(context)
-                      .size
-                      .height,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
                   child: Center(
                     child: Stack(
                       children: [
@@ -80,12 +73,11 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          VideoScreen(
-                                            videoUrl: offset.videoUrl,
-                                            offset: Offset(
-                                                offset.offsetX, offset.offsetY),
-                                          ),
+                                      builder: (context) => VideoScreen(
+                                        videoUrl: offset.videoUrl,
+                                        offset: Offset(
+                                            offset.offsetX, offset.offsetY),
+                                      ),
                                     ),
                                   );
                                 },
@@ -108,12 +100,11 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          VideoScreen(
-                                            videoUrl: offset.videoUrl,
-                                            offset: Offset(
-                                                offset.offsetX, offset.offsetY),
-                                          ),
+                                      builder: (context) => VideoScreen(
+                                        videoUrl: offset.videoUrl,
+                                        offset: Offset(
+                                            offset.offsetX, offset.offsetY),
+                                      ),
                                     ),
                                   );
                                 },
@@ -125,7 +116,7 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                               ),
                             ),
                         if (showMolotov && _grenades.isNotEmpty)
-                          for(var offset in _grenades
+                          for (var offset in _grenades
                               .firstWhere((g) => g.name == 'Molotov')
                               .offsets)
                             Positioned(
@@ -136,12 +127,11 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          VideoScreen(
-                                            videoUrl: offset.videoUrl,
-                                            offset: Offset(
-                                                offset.offsetX, offset.offsetY),
-                                          ),
+                                      builder: (context) => VideoScreen(
+                                        videoUrl: offset.videoUrl,
+                                        offset: Offset(
+                                            offset.offsetX, offset.offsetY),
+                                      ),
                                     ),
                                   );
                                 },

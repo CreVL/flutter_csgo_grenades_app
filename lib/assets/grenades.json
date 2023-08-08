@@ -62,18 +62,18 @@
           "name": "Smoke",
           "offsets": [
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 50.0,
+              "offsetY": 120.0,
               "videoUrl": "lib/assets/video/3smoke.mp4"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 30.0,
+              "offsetY": 50.0,
               "videoUrl": "lib/assets/video/2smoke.mp4"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 30.0,
+              "offsetY": 30.0,
               "videoUrl": "lib/assets/video/1smoke.mp4"
             }
           ]
@@ -82,13 +82,13 @@
           "name": "Flash",
           "offsets": [
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 80.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 110.0,
+              "offsetY": 120.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             }
           ]
@@ -97,13 +97,13 @@
           "name": "Molotov",
           "offsets": [
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 10.0,
+              "offsetY": 24.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 190.0,
+              "offsetY": 52.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             }
           ]
@@ -117,18 +117,18 @@
           "name": "Smoke",
           "offsets": [
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 120.0,
               "videoUrl": "lib/assets/video/3smoke.mp4"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 120.0,
               "videoUrl": "lib/assets/video/2smoke.mp4"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 120.0,
               "videoUrl": "lib/assets/video/1smoke.mp4"
             }
           ]
@@ -137,13 +137,13 @@
           "name": "Flash",
           "offsets": [
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 120.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 120.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             }
           ]
@@ -152,13 +152,13 @@
           "name": "Molotov",
           "offsets": [
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 120.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 120.0,
               "videoUrl": "https://www.youtube.com/watch?v=f6cw1kFIshM"
             }
           ]
@@ -172,18 +172,18 @@
           "name": "Smoke",
           "offsets": [
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 75.0,
+              "offsetY": 45.0,
               "videoUrl": "lib/assets/video/3smoke.mp4"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 120.0,
               "videoUrl": "lib/assets/video/2smoke.mp4"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 120.0,
               "videoUrl": "lib/assets/video/1smoke.mp4"
             }
           ]
@@ -192,13 +192,13 @@
           "name": "Flash",
           "offsets": [
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 120.0,
+              "offsetY": 120.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             },
             {
               "offsetX": 15.0,
-              "offsetY": 0.5,
+              "offsetY": 120.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             }
           ]
@@ -207,13 +207,13 @@
           "name": "Molotov",
           "offsets": [
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 70.0,
+              "offsetY": 150.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             },
             {
-              "offsetX": 0.5,
-              "offsetY": 0.5,
+              "offsetX": 90.0,
+              "offsetY": 45.0,
               "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
             }
           ]
