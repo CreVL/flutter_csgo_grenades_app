@@ -40,6 +40,36 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
     _mapGrenadesBloc.add(LoadMapGrenades());
   }
 
+  Widget buildGrenadeIcon({
+    required double offsetX,
+    required double offsetY,
+    required String imagePath,
+    required String videoUrl,
+  }) {
+    return Positioned(
+      left: offsetX,
+      top: offsetY,
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => VideoScreen(
+                videoUrl: videoUrl,
+                offset: Offset(offsetX, offsetY),
+              ),
+            ),
+          );
+        },
+        child: Image.asset(
+          imagePath,
+          width: 20,
+          height: 20,
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,82 +95,34 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                           for (var offset in _grenades
                               .firstWhere((g) => g.name == 'Smoke')
                               .offsets)
-                            Positioned(
-                              left: offset.offsetX,
-                              top: offset.offsetY,
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => VideoScreen(
-                                        videoUrl: offset.videoUrl,
-                                        offset: Offset(
-                                            offset.offsetX, offset.offsetY),
-                                      ),
-                                    ),
-                                  );
-                                },
-                                child: Image.asset(
+                            buildGrenadeIcon(
+                              offsetX: offset.offsetX,
+                              offsetY: offset.offsetY,
+                              imagePath:
                                   'lib/assets/grenade_icon/smoke_icon.png',
-                                  width: 20,
-                                  height: 20,
-                                ),
-                              ),
+                              videoUrl: offset.videoUrl,
                             ),
                         if (showFlash && _grenades.isNotEmpty)
                           for (var offset in _grenades
                               .firstWhere((g) => g.name == 'Flash')
                               .offsets)
-                            Positioned(
-                              left: offset.offsetX,
-                              top: offset.offsetY,
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => VideoScreen(
-                                        videoUrl: offset.videoUrl,
-                                        offset: Offset(
-                                            offset.offsetX, offset.offsetY),
-                                      ),
-                                    ),
-                                  );
-                                },
-                                child: Image.asset(
+                            buildGrenadeIcon(
+                              offsetX: offset.offsetX,
+                              offsetY: offset.offsetY,
+                              imagePath:
                                   'lib/assets/grenade_icon/flash_icon.png',
-                                  width: 15,
-                                  height: 15,
-                                ),
-                              ),
+                              videoUrl: offset.videoUrl,
                             ),
                         if (showMolotov && _grenades.isNotEmpty)
                           for (var offset in _grenades
                               .firstWhere((g) => g.name == 'Molotov')
                               .offsets)
-                            Positioned(
-                              left: offset.offsetX,
-                              top: offset.offsetY,
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => VideoScreen(
-                                        videoUrl: offset.videoUrl,
-                                        offset: Offset(
-                                            offset.offsetX, offset.offsetY),
-                                      ),
-                                    ),
-                                  );
-                                },
-                                child: Image.asset(
+                            buildGrenadeIcon(
+                              offsetX: offset.offsetX,
+                              offsetY: offset.offsetY,
+                              imagePath:
                                   'lib/assets/grenade_icon/fire_icon.png',
-                                  width: 15,
-                                  height: 15,
-                                ),
-                              ),
+                              videoUrl: offset.videoUrl,
                             ),
                       ],
                     ),
