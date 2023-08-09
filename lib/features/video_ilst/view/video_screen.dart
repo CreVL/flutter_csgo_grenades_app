@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoScreen extends StatefulWidget {
@@ -16,7 +17,7 @@ class _VideoScreenState extends State<VideoScreen> {
   late VideoPlayerController _controller;
   bool _isVideoInitialized = false;
   double _currentSliderValue = 0.0;
-
+  bool _isFullScreen = false;
   @override
   void initState() {
     super.initState();
@@ -88,21 +89,64 @@ class _VideoScreenState extends State<VideoScreen> {
         )
             : CircularProgressIndicator(),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            if (_controller.value.isPlaying) {
-              _controller.pause();
-            } else {
-              _controller.play();
-            }
-          });
-        },
-        child: Icon(
-          _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-        ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                if (_isFullScreen) {
+                  _exitFullScreen();
+                } else {
+                  _enterFullScreen();
+                }
+              });
+            },
+            child: Icon(
+              _isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
+            ),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              setState(() {
+                if (_controller.value.isPlaying) {
+                  _controller.pause();
+                } else {
+                  _controller.play();
+                }
+              });
+            },
+            child: Icon(
+              _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+            ),
+          ),
+        ],
       ),
     );
+
   }
+  void _enterFullScreen() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+    ]);
+
+    setState(() {
+      _isFullScreen = true;
+    });
+  }
+
+  void _exitFullScreen() {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+
+    setState(() {
+      _isFullScreen = false;
+    });
+  }
+
 }
 
