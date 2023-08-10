@@ -18,6 +18,7 @@ class _VideoScreenState extends State<VideoScreen> {
   bool _isVideoInitialized = false;
   double _currentSliderValue = 0.0;
   bool _isFullScreen = false;
+
   @override
   void initState() {
     super.initState();
@@ -51,7 +52,6 @@ class _VideoScreenState extends State<VideoScreen> {
     super.dispose();
   }
 
-
   void _onVideoControllerUpdate() {
     if (_controller.value.position >= _controller.value.duration) {
       _controller.seekTo(Duration.zero);
@@ -61,70 +61,98 @@ class _VideoScreenState extends State<VideoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Video Screen"),
-      ),
-      body: Center(
-        child: _isVideoInitialized
-            ? Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: VideoPlayer(_controller),
+    return WillPopScope(
+      onWillPop: () async {
+        if (_isFullScreen) {
+          _exitFullScreen();
+          return false;
+        }
+        return true;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Video Screen"),
+        ),
+        body: Center(
+          child: _isVideoInitialized
+              ? AspectRatio(
+            aspectRatio: _controller.value.aspectRatio,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.width,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  VideoPlayer(_controller),
+                  Positioned(
+                    bottom: 2,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Slider(
+                              inactiveColor: Colors.black,
+                              value: _currentSliderValue,
+                              min: 0.0,
+                              max: _controller.value.duration.inSeconds.toDouble(),
+                              onChanged: (value) {
+                                setState(() {
+                                  _currentSliderValue = value;
+                                  _controller.seekTo(Duration(seconds: value.toInt()));
+                                });
+                              },
+                            ),
+                              FloatingActionButton(
+                                splashColor: Colors.black,
+                                mini: true,
+                                onPressed: () {
+                                  setState(() {
+                                    if (_controller.value.isPlaying) {
+                                      _controller.pause();
+                                    } else {
+                                      _controller.play();
+                                    }
+                                  });
+                                },
+                                child: Icon(
+                                  _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                                ),
+                            ),
+                            FloatingActionButton(
+                              focusColor: Colors.black,
+                              splashColor: Colors.black,
+                              mini: true,
+                              onPressed: () {
+                                setState(() {
+                                  if (_isFullScreen) {
+                                    _exitFullScreen();
+                                  } else {
+                                    _enterFullScreen();
+                                  }
+                                });
+                              },
+                              child: Icon(
+                                _isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-            Slider(
-              value: _currentSliderValue,
-              min: 0.0,
-              max: _controller.value.duration.inSeconds.toDouble(),
-              onChanged: (value) {
-                setState(() {
-                  _currentSliderValue = value;
-                  _controller.seekTo(Duration(seconds: value.toInt()));
-                });
-              },
-            ),
-          ],
-        )
-            : CircularProgressIndicator(),
-      ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                if (_isFullScreen) {
-                  _exitFullScreen();
-                } else {
-                  _enterFullScreen();
-                }
-              });
-            },
-            child: Icon(
-              _isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
-            ),
-          ),
-          FloatingActionButton(
-            onPressed: () {
-              setState(() {
-                if (_controller.value.isPlaying) {
-                  _controller.pause();
-                } else {
-                  _controller.play();
-                }
-              });
-            },
-            child: Icon(
-              _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-            ),
-          ),
-        ],
+          )
+              : CircularProgressIndicator(),
+        ),
       ),
     );
-
   }
+
+
   void _enterFullScreen() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     SystemChrome.setPreferredOrientations([
@@ -147,6 +175,4 @@ class _VideoScreenState extends State<VideoScreen> {
       _isFullScreen = false;
     });
   }
-
 }
-

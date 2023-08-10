@@ -9,17 +9,17 @@
             {
               "offsetX": 120.0,
               "offsetY": 120.0,
-              "videoUrl": "https://firebasestorage.googleapis.com/v0/b/flutter-csgo-grenades-app.appspot.com/o/assets%2F3smoke.mp4?alt=media&token=c6311612-2f2a-4c43-8dab-559b5a413759"
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/1smoke.mp4"
             },
             {
               "offsetX": 120.0,
               "offsetY": 110.0,
-              "videoUrl": "https://firebasestorage.googleapis.com/v0/b/flutter-csgo-grenades-app.appspot.com/o/assets%2F2smoke.mp4?alt=media&token=5c588cb8-f900-4f64-8acb-6344bd6631b4"
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/2smoke.mp4"
             },
             {
               "offsetX": 10.0,
               "offsetY": 120.0,
-              "videoUrl": "https://firebasestorage.googleapis.com/v0/b/flutter-csgo-grenades-app.appspot.com/o/assets%2F1smoke.mp4?alt=media&token=cbce5682-d57e-4b5a-892e-d7ccfbc7aeda"
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/3smoke.mp4"
             }
           ]
         },
