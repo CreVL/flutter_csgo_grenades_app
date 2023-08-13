@@ -79,46 +79,36 @@ class _VideoScreenState extends State<VideoScreen> {
             aspectRatio: _controller.value.aspectRatio,
             child: Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
                   VideoPlayer(_controller),
                   Positioned(
-                    bottom: 2,
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.end, // Изменили выравнивание на start
                           children: [
-                            Slider(
-                              inactiveColor: Colors.black,
-                              value: _currentSliderValue,
-                              min: 0.0,
-                              max: _controller.value.duration.inSeconds.toDouble(),
-                              onChanged: (value) {
+                            FloatingActionButton(
+                              splashColor: Colors.black,
+                              mini: true,
+                              onPressed: () {
                                 setState(() {
-                                  _currentSliderValue = value;
-                                  _controller.seekTo(Duration(seconds: value.toInt()));
+                                  if (_controller.value.isPlaying) {
+                                    _controller.pause();
+                                  } else {
+                                    _controller.play();
+                                  }
                                 });
                               },
-                            ),
-                              FloatingActionButton(
-                                splashColor: Colors.black,
-                                mini: true,
-                                onPressed: () {
-                                  setState(() {
-                                    if (_controller.value.isPlaying) {
-                                      _controller.pause();
-                                    } else {
-                                      _controller.play();
-                                    }
-                                  });
-                                },
-                                child: Icon(
-                                  _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-                                ),
+                              child: Icon(
+                                _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                              ),
                             ),
                             FloatingActionButton(
                               focusColor: Colors.black,
@@ -137,7 +127,20 @@ class _VideoScreenState extends State<VideoScreen> {
                                 _isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
                               ),
                             ),
+                            SizedBox(width: 15,)
                           ],
+                        ),
+                        Slider(
+                          inactiveColor: Colors.black,
+                          value: _currentSliderValue,
+                          min: 0.0,
+                          max: _controller.value.duration.inSeconds.toDouble(),
+                          onChanged: (value) {
+                            setState(() {
+                              _currentSliderValue = value;
+                              _controller.seekTo(Duration(seconds: value.toInt()));
+                            });
+                          },
                         ),
                       ],
                     ),
