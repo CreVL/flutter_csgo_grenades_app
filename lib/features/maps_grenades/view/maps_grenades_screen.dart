@@ -26,12 +26,18 @@ class MapsGrenadesScreen extends StatefulWidget {
 }
 
 class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
-  bool showSmoke = false;
-  bool showFlash = false;
-  bool showMolotov = false;
+  bool isSmokeActive = false;
+  bool isFlashActive = false;
+  bool isMolotovActive = false;
   List<GrenadeData> _grenades = [];
   late MapGrenadesBloc _mapGrenadesBloc;
-
+  void resetButtonStates() {
+    setState(() {
+      isSmokeActive = false;
+      isFlashActive = false;
+      isMolotovActive = false;
+    });
+  }
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -41,6 +47,8 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
   }
 
   Widget buildGrenadeIcon({
+    required double iconWidth,
+    required double iconHeight,
     required double offsetX,
     required double offsetY,
     required String imagePath,
@@ -63,8 +71,8 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
         },
         child: Image.asset(
           imagePath,
-          width: 20,
-          height: 20,
+          width: iconWidth,
+          height: iconHeight,
         ),
       ),
     );
@@ -91,33 +99,39 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                     child: Stack(
                       children: [
                         widget.mapImage,
-                        if (showSmoke && _grenades.isNotEmpty)
+                        if (isSmokeActive && _grenades.isNotEmpty)
                           for (var offset in _grenades
                               .firstWhere((g) => g.name == 'Smoke')
                               .offsets)
                             buildGrenadeIcon(
+                              iconWidth: 18,
+                              iconHeight: 18,
                               offsetX: offset.offsetX,
                               offsetY: offset.offsetY,
                               imagePath:
                                   'lib/assets/grenade_icon/smoke_icon.png',
                               videoUrl: offset.videoUrl,
                             ),
-                        if (showFlash && _grenades.isNotEmpty)
+                        if (isFlashActive && _grenades.isNotEmpty)
                           for (var offset in _grenades
                               .firstWhere((g) => g.name == 'Flash')
                               .offsets)
                             buildGrenadeIcon(
+                              iconWidth: 15,
+                              iconHeight: 15,
                               offsetX: offset.offsetX,
                               offsetY: offset.offsetY,
                               imagePath:
                                   'lib/assets/grenade_icon/flash_icon.png',
                               videoUrl: offset.videoUrl,
                             ),
-                        if (showMolotov && _grenades.isNotEmpty)
+                        if (isMolotovActive && _grenades.isNotEmpty)
                           for (var offset in _grenades
                               .firstWhere((g) => g.name == 'Molotov')
                               .offsets)
                             buildGrenadeIcon(
+                              iconWidth: 13,
+                              iconHeight: 13,
                               offsetX: offset.offsetX,
                               offsetY: offset.offsetY,
                               imagePath:
@@ -164,22 +178,28 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
         },
       ),
       bottomNavigationBar: buildBottomNavigationBar(
-        showSmoke: showSmoke,
-        showFlash: showFlash,
-        showMolotov: showMolotov,
+        isSmokeActive: isSmokeActive,
+        isFlashActive: isFlashActive,
+        isMolotovActive: isMolotovActive,
         onSmokePressed: () {
           setState(() {
-            showSmoke = !showSmoke;
+            isSmokeActive = true;
+            isFlashActive = false;
+            isMolotovActive = false;
           });
         },
         onFlashPressed: () {
           setState(() {
-            showFlash = !showFlash;
+            isSmokeActive = false;
+            isFlashActive = true;
+            isMolotovActive = false;
           });
         },
         onMolotovPressed: () {
           setState(() {
-            showMolotov = !showMolotov;
+            isSmokeActive = false;
+            isFlashActive = false;
+            isMolotovActive = true;
           });
         },
       ),

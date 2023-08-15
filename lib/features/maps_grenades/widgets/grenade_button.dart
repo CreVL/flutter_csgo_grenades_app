@@ -38,9 +38,9 @@ class GrenadeButton extends StatelessWidget {
 }
 
 Widget buildBottomNavigationBar({
-  required bool showSmoke,
-  required bool showFlash,
-  required bool showMolotov,
+  required bool isSmokeActive,
+  required bool isFlashActive,
+  required bool isMolotovActive,
   required Function() onSmokePressed,
   required Function() onFlashPressed,
   required Function() onMolotovPressed,
@@ -56,17 +56,17 @@ Widget buildBottomNavigationBar({
         children: [
           GrenadeButton(
             text: 'Smoke',
-            isActive: showSmoke,
+            isActive: isSmokeActive,
             onPressed: onSmokePressed,
           ),
           GrenadeButton(
             text: 'Flash',
-            isActive: showFlash,
+            isActive: isFlashActive,
             onPressed: onFlashPressed,
           ),
           GrenadeButton(
             text: 'Molotov',
-            isActive: showMolotov,
+            isActive: isMolotovActive,
             onPressed: onMolotovPressed,
           ),
         ],
