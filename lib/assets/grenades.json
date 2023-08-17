@@ -7,19 +7,54 @@
           "name": "Smoke",
           "offsets": [
             {
-              "offsetX": 120.0,
-              "offsetY": 120.0,
+              "offsetX": 140.0,
+              "offsetY": 177.0,
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/1smoke.mp4"
             },
             {
-              "offsetX": 120.0,
-              "offsetY": 110.0,
+              "offsetX": 154.0,
+              "offsetY": 173.0,
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/2smoke.mp4"
             },
             {
-              "offsetX": 10.0,
-              "offsetY": 120.0,
+              "offsetX": 122.0,
+              "offsetY": 227.0,
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/3smoke.mp4"
+            },
+            {
+              "offsetX": 121.0,
+              "offsetY": 165.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/4smoke.mp4"
+            },
+            {
+              "offsetX": 27.0,
+              "offsetY": 38.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/5smoke.mp4"
+            },
+            {
+              "offsetX": 56.0,
+              "offsetY": 87.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/6smoke.mp4"
+            },
+            {
+              "offsetX": 85.0,
+              "offsetY": 57.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/7smoke.mp4"
+            },
+            {
+              "offsetX": 85.0,
+              "offsetY": 38.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/8smoke.mp4"
+            },
+            {
+              "offsetX": 107.0,
+              "offsetY": 110.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/9smoke.mp4"
+            },
+            {
+              "offsetX": 178.0,
+              "offsetY": 103.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/10smoke.mp4"
             }
           ]
         },
@@ -27,14 +62,31 @@
           "name": "Flash",
           "offsets": [
             {
-              "offsetX": 150.0,
-              "offsetY": 120.0,
-              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+              "offsetX": 115.0,
+              "offsetY": 110.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Flash/1flash.mp4"
             },
             {
-              "offsetX": 120.0,
-              "offsetY": 120.0,
-              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+              "offsetX": 32.0,
+              "offsetY": 74.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Flash/2flash.mp4"
+            },{
+              "offsetX": 57.0,
+              "offsetY": 35.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Flash/3flash.mp4"
+            },{
+              "offsetX": 67.0,
+              "offsetY": 35.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Flash/4flash.mp4"
+            },{
+              "offsetX": 203.0,
+              "offsetY": 170.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Flash/5flash.mp4"
+            },
+            {
+              "offsetX": 141.0,
+              "offsetY": 126.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Flash/6flash.mp4"
             }
           ]
         },
@@ -42,14 +94,19 @@
           "name": "Molotov",
           "offsets": [
             {
-              "offsetX": 120.0,
-              "offsetY": 120.0,
-              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+              "offsetX": 140.0,
+              "offsetY": 130.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Molotov/1moly.mp4"
             },
             {
-              "offsetX": 50.0,
-              "offsetY": 30.0,
-              "videoUrl": "https://www.youtube.com/watch?v=r9KLDgdokvQ&t=10s"
+              "offsetX": 190.0,
+              "offsetY": 205.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Molotov/2moly.mp4"
+            },
+            {
+              "offsetX": 182.0,
+              "offsetY": 165.0,
+              "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Molotov/3moly.mp4"
             }
           ]
         }

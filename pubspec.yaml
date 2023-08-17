@@ -73,11 +73,12 @@ flutter:
     - lib/assets/maps_logo/dust.png
     - lib/assets/maps_logo/inferno.png
     - lib/assets/maps_logo/overpass.png
+    - lib/assets/maps_logo/ancient.png
     - lib/assets/maps_grenades/map_dust.png
     - lib/assets/maps_grenades/map_inferno.png
-    - lib/assets/maps_grenades/map_infernot.png
     - lib/assets/maps_grenades/map_mirage.png
     - lib/assets/maps_grenades/map_overpass.png
+    - lib/assets/maps_grenades/map_ancient.png
     - lib/assets/grenade_icon/flash.png
     - lib/assets/grenade_icon/moly.png
     - lib/assets/grenade_icon/smoke.png

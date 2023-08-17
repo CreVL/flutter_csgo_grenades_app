@@ -92,7 +92,7 @@ class _VideoScreenState extends State<VideoScreen> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.end, // Изменили выравнивание на start
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             FloatingActionButton(
                               splashColor: Colors.black,

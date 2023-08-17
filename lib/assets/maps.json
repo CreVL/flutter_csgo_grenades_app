@@ -1,27 +1,33 @@
 [
-    {
-      "mapImage": "lib/assets/maps_grenades/map_mirage.png",
-      "mapLogo": "lib/assets/maps_logo/mirage.png",
-      "mapId": "map1",
-      "title": "Mirage"
-    },
-    {
-      "mapImage": "lib/assets/maps_grenades/map_dust.png",
-      "mapLogo": "lib/assets/maps_logo/dust.png",
-      "mapId": "map2",
-      "title": "Dust2"
-    },
-    {
-      "mapImage": "lib/assets/maps_grenades/map_inferno.png",
-      "mapLogo": "lib/assets/maps_logo/inferno.png",
-      "mapId": "map3",
-      "title": "Inferno"
-    },
-    {
-      "mapImage": "lib/assets/maps_grenades/map_overpass.png",
-      "mapLogo": "lib/assets/maps_logo/overpass.png",
-      "mapId": "map4",
-      "title": "Overpass"
-    }
-  ]
+  {
+    "mapImage": "lib/assets/maps_grenades/map_mirage.png",
+    "mapLogo": "lib/assets/maps_logo/mirage.png",
+    "mapId": "map1",
+    "title": "Mirage"
+  },
+  {
+    "mapImage": "lib/assets/maps_grenades/map_dust.png",
+    "mapLogo": "lib/assets/maps_logo/dust.png",
+    "mapId": "map2",
+    "title": "Dust2"
+  },
+  {
+    "mapImage": "lib/assets/maps_grenades/map_inferno.png",
+    "mapLogo": "lib/assets/maps_logo/inferno.png",
+    "mapId": "map3",
+    "title": "Inferno"
+  },
+  {
+    "mapImage": "lib/assets/maps_grenades/map_overpass.png",
+    "mapLogo": "lib/assets/maps_logo/overpass.png",
+    "mapId": "map4",
+    "title": "Overpass"
+  },
+  {
+    "mapImage": "lib/assets/maps_grenades/map_ancient.png",
+    "mapLogo": "lib/assets/maps_logo/ancient.png",
+    "mapId": "map5",
+    "title": "Ancient"
+  }
+]
   
