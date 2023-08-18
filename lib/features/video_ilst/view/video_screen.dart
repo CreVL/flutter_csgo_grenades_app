@@ -71,7 +71,7 @@ class _VideoScreenState extends State<VideoScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Video Screen"),
+          title: Text("Throw"),
         ),
         body: Center(
           child: _isVideoInitialized
