@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csgo_grenades_app/features/video_ilst/video.dart';
+import 'package:csgo_grenades/features/video_ilst/video.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../repositories/maps/abstract_maps_repository.dart';

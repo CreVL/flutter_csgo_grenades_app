@@ -1,5 +1,5 @@
-name: flutter_csgo_grenades_app
-description: A new Flutter project.
+name: csgo_grenades
+description: 'CS:GO раскидки гранат'
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -88,7 +88,6 @@ flutter:
     - lib/assets/grenade_icon/smoke_icon.png
     - lib/assets/grenades.json
     - lib/assets/maps.json
-    - lib/assets/video/3smoke.mp4
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

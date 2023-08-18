@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csgo_grenades_app/features/maps_list/bloc/maps_list_bloc.dart';
-import 'package:flutter_csgo_grenades_app/repositories/maps/maps_grenades.dart';
+import 'package:csgo_grenades/features/maps_list/bloc/maps_list_bloc.dart';
+import 'package:csgo_grenades/repositories/maps/maps_grenades.dart';
 import 'package:get_it/get_it.dart';
 import '../../../repositories/maps/models/models.dart';
 import '../../maps_grenades/view/view.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_csgo_grenades_app/repositories/maps/abstract_maps_repository.dart';
+import 'package:csgo_grenades/repositories/maps/abstract_maps_repository.dart';
 
 import '../../../repositories/maps/models/models.dart';
 

@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_csgo_grenades_app/repositories/maps/abstract_maps_repository.dart';
-import 'package:flutter_csgo_grenades_app/repositories/maps/models/map_data.dart';
+import 'package:csgo_grenades/repositories/maps/abstract_maps_repository.dart';
+import 'package:csgo_grenades/repositories/maps/models/map_data.dart';
 
 import 'models/map_grenades_data.dart';
 
