@@ -104,8 +104,8 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                               .firstWhere((g) => g.name == 'Smoke')
                               .offsets)
                             buildGrenadeIcon(
-                              iconWidth: 18,
-                              iconHeight: 18,
+                              iconWidth: 25,
+                              iconHeight: 25,
                               offsetX: offset.offsetX,
                               offsetY: offset.offsetY,
                               imagePath:
@@ -117,8 +117,8 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                               .firstWhere((g) => g.name == 'Flash')
                               .offsets)
                             buildGrenadeIcon(
-                              iconWidth: 15,
-                              iconHeight: 15,
+                              iconWidth: 20,
+                              iconHeight: 20,
                               offsetX: offset.offsetX,
                               offsetY: offset.offsetY,
                               imagePath:
@@ -130,8 +130,8 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                               .firstWhere((g) => g.name == 'Molotov')
                               .offsets)
                             buildGrenadeIcon(
-                              iconWidth: 13,
-                              iconHeight: 13,
+                              iconWidth: 18,
+                              iconHeight: 18,
                               offsetX: offset.offsetX,
                               offsetY: offset.offsetY,
                               imagePath:

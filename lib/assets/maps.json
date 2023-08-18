@@ -18,12 +18,6 @@
     "title": "Inferno"
   },
   {
-    "mapImage": "lib/assets/maps_grenades/map_overpass.png",
-    "mapLogo": "lib/assets/maps_logo/overpass.png",
-    "mapId": "map4",
-    "title": "Overpass"
-  },
-  {
     "mapImage": "lib/assets/maps_grenades/map_ancient.png",
     "mapLogo": "lib/assets/maps_logo/ancient.png",
     "mapId": "map5",
