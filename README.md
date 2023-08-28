@@ -1,8 +1,7 @@
 # Grenade Predictor for CS:GO
 
 # Select the map
-<img src="![image](https://github.com/CreVL/flutter_csgo_grenades_app/assets/91658458/4e76782c-5264-4012-a6f0-a06e0ea99e94)g" alt="Image" width="300" height="200">
-
+![image](https://github.com/CreVL/flutter_csgo_grenades_app/assets/91658458/4e76782c-5264-4012-a6f0-a06e0ea99e94)
 # Select the grenade type and the desired position
 ![untitled](https://github.com/CreVL/flutter_csgo_grenades_app/assets/91658458/59fce937-d9b7-4862-9f6a-c6c0dd377367)
 
