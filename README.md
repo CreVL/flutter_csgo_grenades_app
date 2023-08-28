@@ -1,16 +1,12 @@
-# flutter_csgo_grenades_app
+# Grenade Predictor for CS:GO
 
-A new Flutter project.
+## Select the map
+![image](https://github.com/CreVL/flutter_csgo_grenades_app/assets/91658458/4e76782c-5264-4012-a6f0-a06e0ea99e94)
 
-## Getting Started
+## Select the grenade type and the desired position
+![untitled](https://github.com/CreVL/flutter_csgo_grenades_app/assets/91658458/59fce937-d9b7-4862-9f6a-c6c0dd377367)
 
-This project is a starting point for a Flutter application.
+## Receive a video guide on throwing to the chosen position
+![image](https://github.com/CreVL/flutter_csgo_grenades_app/assets/91658458/0f3cd52f-efa0-42ad-b68e-5f80ff5ad9c6)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+PS: The app will update when possible, or at least I hope so 😉
