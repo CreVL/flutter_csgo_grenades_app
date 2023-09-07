@@ -10,4 +10,4 @@
 ## 3. Receive a video guide on throwing to the chosen position
 ![image_2023-08-28_17-43-31](https://github.com/CreVL/flutter_csgo_grenades_app/assets/91658458/81ee7dee-91e4-4a98-a44d-4d1411ace83f)
 
-PS: The app will update when possible, or at least I hope so 😉
+PS: The app may be updated if possible, or at least I hope so 😉
