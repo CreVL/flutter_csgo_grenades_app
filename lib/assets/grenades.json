@@ -7,8 +7,8 @@
           "name": "Smoke",
           "offsets": [
             {
-              "offsetX": 140.0,
-              "offsetY": 177.0,
+              "offsetX": 137.0,
+              "offsetY": 176.0,
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/1smoke.mp4"
             },
             {
@@ -23,27 +23,27 @@
             },
             {
               "offsetX": 121.0,
-              "offsetY": 165.0,
+              "offsetY": 162.0,
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/4smoke.mp4"
             },
             {
               "offsetX": 27.0,
-              "offsetY": 38.0,
+              "offsetY": 35.0,
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/5smoke.mp4"
             },
             {
-              "offsetX": 56.0,
-              "offsetY": 87.0,
+              "offsetX": 54.0,
+              "offsetY": 85.0,
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/6smoke.mp4"
             },
             {
-              "offsetX": 85.0,
-              "offsetY": 57.0,
+              "offsetX": 82.0,
+              "offsetY": 53.0,
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/7smoke.mp4"
             },
             {
-              "offsetX": 85.0,
-              "offsetY": 38.0,
+              "offsetX": 82.0,
+              "offsetY": 35.0,
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/8smoke.mp4"
             },
             {
@@ -52,8 +52,8 @@
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/9smoke.mp4"
             },
             {
-              "offsetX": 178.0,
-              "offsetY": 103.0,
+              "offsetX": 179.0,
+              "offsetY": 99.0,
               "videoUrl": "https://flutter.hb.ru-msk.vkcs.cloud/video/Mirage/Smoke/10smoke.mp4"
             }
           ]
