@@ -5,6 +5,7 @@ import 'package:csgo_grenades/features/maps_list/bloc/maps_list_bloc.dart';
 import 'package:csgo_grenades/repositories/maps/maps_grenades.dart';
 import 'package:get_it/get_it.dart';
 import '../../../repositories/maps/models/models.dart';
+import '../../../theme/app_colors.dart';
 import '../../maps_grenades/view/view.dart';
 
 class MapsListScreen extends StatefulWidget {
@@ -60,7 +61,7 @@ class _MapsListScreenState extends State<MapsListScreen> {
                         decoration: const BoxDecoration(
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black,
+                              color: AppColors.blackColor,
                               spreadRadius: 5,
                               blurRadius: 10,
                               offset: Offset(3, 3),
@@ -71,9 +72,9 @@ class _MapsListScreenState extends State<MapsListScreen> {
                           ),
                           gradient: LinearGradient(
                             colors: [
-                              Color(0xFFFFD100),
-                              Color(0xFFFFFFFF),
-                              Color(0xFFFFD100),
+                              AppColors.yellowColor,
+                              AppColors.whiteColor,
+                              AppColors.yellowColor,
                             ],
                           ),
                         ),
@@ -92,7 +93,6 @@ class _MapsListScreenState extends State<MapsListScreen> {
                 );
               },
             );
-
           }
           if (state is MapListLoadingFailed) {
             return Center(
@@ -104,7 +104,9 @@ class _MapsListScreenState extends State<MapsListScreen> {
                   Text('Что-то не так'),
                   const SizedBox(height: 30),
                   CupertinoButton(
-                    child: const Text('Перезагрузить',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                    child: const Text('Перезагрузить',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold)),
                     color: Colors.amber,
                     onPressed: () {
                       _mapListBloc.add(LoadMapsList());

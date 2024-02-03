@@ -1,3 +1,4 @@
+import 'package:csgo_grenades/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
@@ -71,90 +72,97 @@ class _VideoScreenState extends State<VideoScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Throw"),
+          title: const Text("Throw"),
         ),
         body: Center(
           child: _isVideoInitialized
               ? AspectRatio(
-            aspectRatio: _controller.value.aspectRatio,
-            child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  VideoPlayer(_controller),
-                  Positioned(
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                  aspectRatio: _controller.value.aspectRatio,
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    child: Stack(
+                      alignment: Alignment.center,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            FloatingActionButton(
-                              splashColor: Colors.black,
-                              mini: true,
-                              onPressed: () {
-                                setState(() {
-                                  if (_controller.value.isPlaying) {
-                                    _controller.pause();
-                                  } else {
-                                    _controller.play();
-                                  }
-                                });
-                              },
-                              child: Icon(
-                                _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                        VideoPlayer(_controller),
+                        Positioned(
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  FloatingActionButton(
+                                    splashColor: AppColors.blackColor,
+                                    mini: true,
+                                    onPressed: () {
+                                      setState(() {
+                                        if (_controller.value.isPlaying) {
+                                          _controller.pause();
+                                        } else {
+                                          _controller.play();
+                                        }
+                                      });
+                                    },
+                                    child: Icon(
+                                      _controller.value.isPlaying
+                                          ? Icons.pause
+                                          : Icons.play_arrow,
+                                    ),
+                                  ),
+                                  FloatingActionButton(
+                                    focusColor: AppColors.blackColor,
+                                    splashColor: AppColors.blackColor,
+                                    mini: true,
+                                    onPressed: () {
+                                      setState(() {
+                                        if (_isFullScreen) {
+                                          _exitFullScreen();
+                                        } else {
+                                          _enterFullScreen();
+                                        }
+                                      });
+                                    },
+                                    child: Icon(
+                                      _isFullScreen
+                                          ? Icons.fullscreen_exit
+                                          : Icons.fullscreen,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 15,
+                                  )
+                                ],
                               ),
-                            ),
-                            FloatingActionButton(
-                              focusColor: Colors.black,
-                              splashColor: Colors.black,
-                              mini: true,
-                              onPressed: () {
-                                setState(() {
-                                  if (_isFullScreen) {
-                                    _exitFullScreen();
-                                  } else {
-                                    _enterFullScreen();
-                                  }
-                                });
-                              },
-                              child: Icon(
-                                _isFullScreen ? Icons.fullscreen_exit : Icons.fullscreen,
+                              Slider(
+                                inactiveColor: AppColors.blackColor,
+                                value: _currentSliderValue,
+                                min: 0.0,
+                                max: _controller.value.duration.inSeconds
+                                    .toDouble(),
+                                onChanged: (value) {
+                                  setState(() {
+                                    _currentSliderValue = value;
+                                    _controller.seekTo(
+                                        Duration(seconds: value.toInt()));
+                                  });
+                                },
                               ),
-                            ),
-                            SizedBox(width: 15,)
-                          ],
-                        ),
-                        Slider(
-                          inactiveColor: Colors.black,
-                          value: _currentSliderValue,
-                          min: 0.0,
-                          max: _controller.value.duration.inSeconds.toDouble(),
-                          onChanged: (value) {
-                            setState(() {
-                              _currentSliderValue = value;
-                              _controller.seekTo(Duration(seconds: value.toInt()));
-                            });
-                          },
+                            ],
+                          ),
                         ),
                       ],
                     ),
                   ),
-                ],
-              ),
-            ),
-          )
-              : CircularProgressIndicator(),
+                )
+              : const CircularProgressIndicator(),
         ),
       ),
     );
   }
-
 
   void _enterFullScreen() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);

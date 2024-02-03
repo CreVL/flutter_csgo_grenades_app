@@ -1,3 +1,4 @@
+import 'package:csgo_grenades/theme/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -6,7 +7,7 @@ class GrenadeButton extends StatelessWidget {
   final bool isActive;
   final VoidCallback onPressed;
 
-  GrenadeButton({
+  const GrenadeButton({
     required this.text,
     required this.isActive,
     required this.onPressed,
@@ -18,15 +19,15 @@ class GrenadeButton extends StatelessWidget {
       onPressed: onPressed,
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(
-          isActive ? Colors.amber : Colors.grey[300]!,
+          isActive ? AppColors.yellowColor : AppColors.grayViewColor,
         ),
         elevation: MaterialStateProperty.all<double>(
           isActive ? 0 : 5,
         ),
         overlayColor: MaterialStateProperty.resolveWith<Color?>(
-              (states) {
+          (states) {
             if (states.contains(MaterialState.pressed)) {
-              return Colors.white.withOpacity(0.2);
+              return AppColors.whiteColor.withOpacity(0.2);
             }
             return null;
           },
@@ -46,7 +47,7 @@ Widget buildBottomNavigationBar({
   required Function() onMolotovPressed,
 }) {
   return BottomAppBar(
-    color: Colors.black,
+    color: AppColors.blackColor,
     child: Container(
       decoration: const BoxDecoration(
         color: Colors.transparent,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class GrenadeData {
   final String name;
 
@@ -9,7 +10,6 @@ class GrenadeData {
     required this.offsets,
   });
 }
-
 
 class GrenadeOffset {
   final double offsetX;
@@ -22,4 +22,3 @@ class GrenadeOffset {
     required this.videoUrl,
   });
 }
-

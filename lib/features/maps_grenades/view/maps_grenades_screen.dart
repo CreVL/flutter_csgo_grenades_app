@@ -6,6 +6,7 @@ import 'package:get_it/get_it.dart';
 
 import '../../../repositories/maps/abstract_maps_repository.dart';
 import '../../../repositories/maps/models/map_grenades_data.dart';
+import '../../../theme/app_colors.dart';
 import '../bloc/map_grenades_bloc.dart';
 import '../widgets/grenade_button.dart';
 
@@ -38,6 +39,7 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
       isMolotovActive = false;
     });
   }
+
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -158,17 +160,18 @@ class _MapsGrenadesScreenState extends State<MapsGrenadesScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('Упс... :('),
-                  Text('Не удалось загрузить координаты гранат.'),
+                  const Text('Упс... :('),
+                  const Text('Не удалось загрузить координаты гранат.'),
                   const SizedBox(height: 30),
                   CupertinoButton(
-                    child: const Text('Повторить',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
-                    color: Colors.amber,
+                    color: AppColors.yellowColor,
                     onPressed: () {
                       _mapGrenadesBloc.add(LoadMapGrenades());
                     },
+                    child: const Text('Повторить',
+                        style: TextStyle(
+                            color: AppColors.whiteColor,
+                            fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),

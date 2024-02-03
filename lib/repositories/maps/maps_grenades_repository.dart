@@ -6,7 +6,7 @@ import 'package:csgo_grenades/repositories/maps/models/map_data.dart';
 
 import 'models/map_grenades_data.dart';
 
-class MapsGrenadesRepository implements AbstractMapsRepository{
+class MapsGrenadesRepository implements AbstractMapsRepository {
   @override
   Future<List<MapData>> loadMapData() async {
     String jsonString = await rootBundle.loadString('lib/assets/maps.json');
@@ -28,7 +28,8 @@ class MapsGrenadesRepository implements AbstractMapsRepository{
     String jsonString = await rootBundle.loadString('lib/assets/grenades.json');
     Map<String, dynamic> jsonData = json.decode(jsonString);
     List<dynamic> maps = jsonData['maps'] as List<dynamic>;
-    final mapData = maps.firstWhere((map) => map['mapId'] == mapId, orElse: () => null);
+    final mapData =
+        maps.firstWhere((map) => map['mapId'] == mapId, orElse: () => null);
     if (mapData == null) {
       return [];
     }
@@ -50,6 +51,4 @@ class MapsGrenadesRepository implements AbstractMapsRepository{
     }).toList();
     return grenadesDataList;
   }
-
 }
-

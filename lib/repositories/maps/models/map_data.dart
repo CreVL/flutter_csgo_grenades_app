@@ -23,14 +23,13 @@ class MapData extends MapDataBase {
     required String mapId,
     required Image mapImage,
   }) : super(
-    title: title,
-    mapLogo: mapLogo,
-    mapId: mapId,
-    mapImage: mapImage,
-  );
+          title: title,
+          mapLogo: mapLogo,
+          mapId: mapId,
+          mapImage: mapImage,
+        );
 
   @override
   // TODO: implement props
   List<Object?> get props => throw UnimplementedError();
 }
-

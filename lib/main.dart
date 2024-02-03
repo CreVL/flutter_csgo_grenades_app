@@ -11,6 +11,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  GetIt.I.registerLazySingleton<AbstractMapsRepository>(() => MapsGrenadesRepository());
+  GetIt.I.registerLazySingleton<AbstractMapsRepository>(
+      () => MapsGrenadesRepository());
   runApp(const MapsList());
 }

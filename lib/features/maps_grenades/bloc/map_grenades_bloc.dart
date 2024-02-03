@@ -11,13 +11,14 @@ class MapGrenadesBloc extends Bloc<MapGrenadesEvent, MapGrenadesState> {
   final AbstractMapsRepository grenadesRepository;
   final String mapId;
 
-  MapGrenadesBloc(this.grenadesRepository, this.mapId) : super(MapGrenadesInitial()) {
+  MapGrenadesBloc(this.grenadesRepository, this.mapId)
+      : super(MapGrenadesInitial()) {
     on<LoadMapGrenades>((event, emit) async {
-      try{
+      try {
         final grenadesList = await grenadesRepository.loadGrenadesData(mapId);
-        emit(MapGrenadesLoaded(grenadesList:grenadesList));
-      }catch (error){
-        emit(MapGrenadesLoadingFailed(exception:  error));
+        emit(MapGrenadesLoaded(grenadesList: grenadesList));
+      } catch (error) {
+        emit(MapGrenadesLoadingFailed(exception: error));
       }
     });
   }

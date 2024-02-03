@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '606427333960',
     projectId: 'flutter-csgo-grenades-app',
     storageBucket: 'flutter-csgo-grenades-app.appspot.com',
-    iosClientId: '606427333960-l5sl6lavsu293khssmsrdsrsobiool3o.apps.googleusercontent.com',
+    iosClientId:
+        '606427333960-l5sl6lavsu293khssmsrdsrsobiool3o.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterCsgoGrenadesApp',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '606427333960',
     projectId: 'flutter-csgo-grenades-app',
     storageBucket: 'flutter-csgo-grenades-app.appspot.com',
-    iosClientId: '606427333960-l5sl6lavsu293khssmsrdsrsobiool3o.apps.googleusercontent.com',
+    iosClientId:
+        '606427333960-l5sl6lavsu293khssmsrdsrsobiool3o.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterCsgoGrenadesApp',
   );
 }

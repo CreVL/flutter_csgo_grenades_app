@@ -10,11 +10,11 @@ class MapsListBloc extends Bloc<MapsListEvent, MapListState> {
   final AbstractMapsRepository mapsRepository;
   MapsListBloc(this.mapsRepository) : super(MapsListInitial()) {
     on<LoadMapsList>((event, emit) async {
-      try{
+      try {
         final mapsList = await mapsRepository.loadMapData();
-        emit(MapListLoaded(mapsList:mapsList));
-      }catch (error){
-        emit(MapListLoadingFailed(exception:  error));
+        emit(MapListLoaded(mapsList: mapsList));
+      } catch (error) {
+        emit(MapListLoadingFailed(exception: error));
       }
     });
   }
