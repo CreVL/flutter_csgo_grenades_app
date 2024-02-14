@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:csgo_grenades/features/maps_list/bloc/maps_list_bloc.dart';
 import 'package:csgo_grenades/repositories/maps/maps_grenades.dart';
 import 'package:get_it/get_it.dart';
-import '../../../repositories/maps/models/models.dart';
 import '../../../theme/app_colors.dart';
 import '../../maps_grenades/view/view.dart';
 
@@ -100,17 +99,17 @@ class _MapsListScreenState extends State<MapsListScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('Упс... :('),
-                  Text('Что-то не так'),
+                  const Text('Упс... :('),
+                  const Text('Что-то не так'),
                   const SizedBox(height: 30),
                   CupertinoButton(
-                    child: const Text('Перезагрузить',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
                     color: Colors.amber,
                     onPressed: () {
                       _mapListBloc.add(LoadMapsList());
                     },
+                    child: const Text('Перезагрузить',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold)),
                   ),
                 ],
               ),
